@@ -1,0 +1,139 @@
+.contact-page {
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  &__header {
+    margin-bottom: $spacing-1;
+    text-align: center;
+    
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: $spacing-1;
+    }
+  }
+  
+  &__form {
+    background-color: $white;
+    padding: $spacing-3;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+    
+    @media (min-width: $breakpoint-md) {
+      padding: $spacing-4;
+    }
+  }
+  
+  &__group {
+    margin-bottom: $spacing-3;
+  }
+  
+  &__label {
+    display: block;
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-1;
+    color: $gray-800;
+  }
+  
+  &__input, &__textarea {
+    width: 100%;
+    padding: $spacing-2;
+    border-radius: $border-radius-md;
+    border: 1px solid $gray-300;
+    background-color: $white;
+    font-size: 1rem;
+    transition: all $transition-fast;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+    }
+  }
+  
+  &__textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  &__submit {
+    width: 100%;
+  }
+  
+  &__info {
+    margin-bottom: $spacing-4;
+  }
+  
+  &__card {
+    background-color: $white;
+    padding: $spacing-3;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+    text-align: center;
+
+    &-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: $primary-light;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+    }
+
+    &-name {
+      font-size: 1.5rem;
+      font-weight: $font-weight-bold;
+      margin-left: $spacing-1;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: $spacing-1;
+
+      @media (min-width: $breakpoint-sm) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-2;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-3;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: $spacing-1;
+    }
+    
+    &-icon {
+      width: 32px;
+      height: 32px;
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    &-text {
+      color: $gray-600;
+      font-size: 0.875rem;
+      margin-bottom: 0;
+      
+      &.link {
+        &:hover {
+          color: $primary-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.search {
+  max-width: 600px;
+  margin: $spacing-4 auto;
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: $spacing-2 $spacing-2 $spacing-2 $spacing-5;
+    border-radius: $border-radius-lg;
+    border: 1px solid $gray-300;
+    background-color: $white;
+    font-size: 1rem;
+    transition: all $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: $spacing-2;
+    top: 16px;
+    color: $gray-500;
+  }
+
+  ul {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    border: 1px solid $gray-300;
+    border-radius: $border-radius-sm;
+    margin-top: $spacing-1;
+    z-index: 10;
+    overflow: hidden;
+
+    li {
+      padding: $spacing-2 $spacing-1;
+      &:hover {
+        background-color: $gray-100;
+        cursor: pointer;
+      }
+    }
+  }
+}

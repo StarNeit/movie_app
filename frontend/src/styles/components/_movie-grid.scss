@@ -1,0 +1,92 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: $spacing-3;
+  margin-bottom: $spacing-4;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    gap: $spacing-4;
+  }
+  
+  &__wrapper {
+    opacity: 0;
+    animation: fadeIn $transition-base forwards, slideUp $transition-base forwards;
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-3;
+    flex-wrap: wrap;
+    gap: $spacing-2;
+    
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: $spacing-4;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 0;
+  }
+  
+  &__filters {
+    display: flex;
+    gap: $spacing-2;
+  }
+  
+  &__filter {
+    padding: $spacing-1 $spacing-2;
+    background-color: $white;
+    border-radius: $border-radius-md;
+    font-size: 0.875rem;
+    color: $gray-700;
+    border: 1px solid $gray-300;
+    transition: all $transition-fast;
+    
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+    
+    &.active {
+      background-color: $primary-color;
+      color: $white;
+      border-color: $primary-color;
+    }
+  }
+  
+  &__empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: $spacing-5;
+    background-color: $white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+    
+    &-icon {
+      font-size: 48px;
+      color: $gray-400;
+      margin-bottom: $spacing-2;
+    }
+    
+    &-title {
+      color: $gray-700;
+      margin-bottom: $spacing-1;
+    }
+    
+    &-text {
+      color: $gray-600;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+}
